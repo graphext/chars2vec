@@ -1,8 +1,3 @@
-import sys
-import subprocess
-PY_VER = sys.version[0]
-subprocess.call(["pip{:} install -r requirements.txt".format(PY_VER)], shell=True)
-
 from setuptools import setup
 
 setup(
@@ -11,6 +6,7 @@ setup(
     author='Vladimir Chikin',
     author_email='v4@intuition.engineering',
     packages=['chars2vec'],
+    install_requires=['tensorflow', 'keras'],
     include_package_data=True,
     package_data={'chars2vec': ['trained_models/*']},
     description='Character-based word embeddings model based on RNN',
